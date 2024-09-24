@@ -1,7 +1,7 @@
 .dark-mode {
     --primary-color: black;
     --secondary-color: white;
-    --highlight-color: rgb(26, 173, 173);
+    --highlight-color: linear-gradient(40deg, rgb(149, 217, 217), rgb(59, 144, 144));
     
     --accent-color: rgb(255, 100, 100); /* A soft red accent */
     --link-color: rgb(100, 149, 237); /* A nice blue for links */

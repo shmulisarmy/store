@@ -5,7 +5,7 @@
 :root{
     --primary-color: white;
     --secondary-color: black;
-    --highlight-color: #f29e66;
+    --highlight-color: linear-gradient(90deg, #e9c7b0, #eaa87c);
     
     --accent-color: rgb(100, 255, 100); /* A soft green accent */
     --link-color: rgb(30, 144, 255); /* A vibrant blue for links */
@@ -14,7 +14,6 @@
     --transparent-primary-color: rgba(255, 255, 255, 0.9);
     
     --background-color: rgba(240, 240, 240, 1); /* Light background */
-
 
 
     --nav-height: 80px;
@@ -36,7 +35,7 @@ a:hover, button:hover{
 }
 
 button{
-    background-color: var(--highlight-color);
+    background: var(--highlight-color);
 }
 
 nav{

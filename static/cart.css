@@ -2,6 +2,10 @@
 #cart{
     width: 260px;
     position: fixed;
+
+    resize: both;
+    overflow: auto;
+
     max-height: 100vh;
     overflow-y: scroll;
 
