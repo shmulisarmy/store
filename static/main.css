@@ -59,6 +59,13 @@ nav{
         gap: 10px;
     }
 
+    .logo{
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        height: 100%;
+    }
+
     a{
         color: var(--link-color);
         text-decoration: none;
@@ -66,6 +73,10 @@ nav{
         &:hover{
             text-decoration: underline;
         }
+    }
+
+    img{
+        max-height: 80%;
     }
 }
 
