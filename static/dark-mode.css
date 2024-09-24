@@ -1,0 +1,16 @@
+.dark-mode {
+    --primary-color: black;
+    --secondary-color: white;
+    --highlight-color: rgb(26, 173, 173);
+    
+    --accent-color: rgb(255, 100, 100); /* A soft red accent */
+    --link-color: rgb(100, 149, 237); /* A nice blue for links */
+    
+    --transparent-secondary-color: rgba(255, 255, 255, 0.5);
+    --transparent-primary-color: rgba(0, 0, 0, 0.9);
+    
+    --background-color: rgba(18, 18, 18, 1); /* Dark background */
+
+    transition: all 0.6s;
+
+}

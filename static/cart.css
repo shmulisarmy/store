@@ -7,22 +7,22 @@
 
     padding: 1%;
     
-    border: 1px solid black;
-    background-color: white;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    border: 1px solid var(--secondary-color);
+    background-color: var(--primary-color);
+    box-shadow: 0 0 10px  var(--transparent-secondary-color);
 }
 
 
 @media (min-width: 600px) {
     #cart{
         right: 0;
-        top: 0;
+        top: var(--nav-height);
     }
     
 }
 
 
-@media screen and (max-width: 600px) {
+@media (max-width: 600px) {
     #cart{
         width: 100%;
         height: 300px;
@@ -33,7 +33,8 @@
 
 
 .cart-item{
-    border: 1px solid black; 
+    border: 1px solid var(--secondary-color); 
+    background-color: var(--primary-color);
     border-radius: 4px; 
     margin: 10px; 
     padding: 10px;

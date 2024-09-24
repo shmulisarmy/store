@@ -7,8 +7,10 @@
     <link rel="stylesheet" href="static/main.css">
     <link rel="stylesheet" href="static/cart.css">
     <link rel="stylesheet" href="static/store.css">
+    <link rel="stylesheet" href="static/dark-mode.css">
     <script src="/static/main.js"></script>
     <script>
+
 
         async function updateStoreItems() {
             store_items = await(await fetch('/api/store_items')).json()
@@ -21,11 +23,12 @@
 
 <body x-data="{showCart: false, singleItem: null}">
 
-    <nav>
+    <nav id="nav" popovertarget="cart">
         <h1>Alpine.js Example</h1>
 
-        <div>
-            <button @click="showCart = !showCart">Cart</button>
+        <div class="links">
+            <a @click="showCart = !showCart">Cart</a>
+            <a onclick="document.body.classList.toggle('dark-mode')">toggle Dark Mode</a>
         </div>
     </nav>
 
@@ -89,7 +92,7 @@
 
 
 
-    <div id="cart" x-show="showCart"  x-data="storeAndCart">
+    <div popover id="cart" x-show="showCart"  x-data="storeAndCart">
         <h1 x-text="'total price: ' + shared.total_price"></h1>
 
         <template x-for="(quantity, id) in cart">

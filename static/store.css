@@ -43,7 +43,7 @@ header.store-logo{
 
 .store-item{
     --rounded-edge-amount: 4px;
-    border: 1px solid black;
+    border: 1px solid var(--transparent-secondary-color);
     margin: 10px;
     border-top-right-radius: var(--rounded-edge-amount);
     border-top-left-radius: var(--rounded-edge-amount);
