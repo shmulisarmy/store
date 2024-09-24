@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alpine.js Example</title>
+    <link rel="stylesheet" href="static/main.css">
+    <link rel="stylesheet" href="static/cart.css">
+    <link rel="stylesheet" href="static/store.css">
+    <script src="/static/main.js"></script>
+    <script>
+
+        async function updateStoreItems() {
+            store_items = await(await fetch('/api/store_items')).json()
+            console.log(store_items);
+        }
+        updateStoreItems()
+    </script>
+
+</head>
+
+<body x-data="{showCart: false, singleItem: null}">
+
+    <nav>
+        <h1>Alpine.js Example</h1>
+
+        <div>
+            <button @click="showCart = !showCart">Cart</button>
+        </div>
+    </nav>
+
+
+    <div x-data="storeAndCart, {viewingItem: null}" x-show="singleItem" id="single-item"
+        @show="alert('fuck yeah'); viewingItem = await(await fetch('/api/store_items/' + singleItem.id)).json()">
+
+        <h1 x-text="viewingItem.name"></h1>
+        <p x-text="'price: ' + viewingItem.price"></p>
+        <p x-text="'quantity: ' + viewingItem.quantity"></p>
+        <p x-text="'description: ' + viewingItem.description"></p>
+
+        <button @click="singleItem = null">Back</button>
+    </div>
+
+    
+    <div x-show="!singleItem" id="store">
+
+        <header class="store-logo"></header>
+
+        <div class="y-middle">
+
+        <div class="left">
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vero, sit vitae voluptatum soluta quo et ipsam placeat quos. Quasi reiciendis eos hic impedit. Nisi ducimus voluptas dignissimos velit nulla quo fugit vel quidem distinctio enim, doloribus, animi tempora at aliquam ipsam magni ab voluptate sequi incidunt laboriosam in a provident rerum. Quibusdam labore, voluptates laborum cumque sit nesciunt natus, expedita quasi minima fuga repudiandae facilis eius quaerat possimus ratione autem quo accusamus, dignissimos obcaecati iste similique aliquid error ad! Assumenda possimus architecto consequuntur modi hic reiciendis nisi laudantium dolorum laboriosam reprehenderit eius, delectus dolorem. Eaque nostrum, voluptatum doloribus voluptates dignissimos eveniet adipisci aliquam tempore iusto fuga illum dolores aperiam voluptatem omnis deleniti ut voluptatibus cupiditate animi natus provident consectetur quos ea deserunt suscipit. Explicabo ipsam laborum neque veritatis tenetur officia. Deleniti provident eius eos aliquid. Sint voluptatibus repudiandae maxime eius soluta quam sed laborum, beatae, esse inventore nostrum dicta numquam ducimus voluptas laudantium? Ab voluptatibus itaque deleniti, impedit sunt architecto commodi culpa tempore et. Architecto porro eum eius illo dolorum magnam laboriosam, nam tempore ullam suscipit possimus veniam velit dolore quas provident perferendis sequi ad minus quis esse omnis explicabo facilis commodi reprehenderit. Exercitationem quis earum in et itaque enim at fugit corporis, perspiciatis sunt, rerum, hic animi. Error, rem deleniti odit ab alias corrupti maxime autem amet omnis non praesentium magni sequi dolore consectetur at quibusdam accusantium itaque ad qui nostrum doloremque provident. Consequuntur enim quidem, id, nemo excepturi dignissimos voluptatibus aspernatur commodi rem incidunt reiciendis repellat, magnam adipisci. Tenetur natus, perspiciatis odit distinctio maxime quaerat pariatur architecto ipsam eos eaque voluptatem obcaecati nulla a veniam eius repudiandae molestias deserunt ratione numquam blanditiis nobis et animi dolore. Sit neque voluptatum cum quas tempora, molestias eligendi natus harum adipisci nobis minima dolor, perferendis dolorem totam veritatis labore eius nihil? Deserunt deleniti quo officiis praesentium reprehenderit illum cupiditate nesciunt sequi quis? Necessitatibus adipisci veniam atque earum qui odio perspiciatis quod numquam ab nobis, porro culpa blanditiis alias architecto accusamus minus dolor ducimus ullam modi expedita nihil! Nobis rem inventore distinctio rerum ipsam, reiciendis omnis vel enim, odio debitis ipsa! Sed natus totam rem nesciunt. Corporis magni aperiam excepturi. Error quos delectus, commodi est labore voluptatum rerum maxime veniam quae, facilis saepe sapiente consectetur deleniti fugit, voluptatibus distinctio a necessitatibus corporis culpa quo hic nulla. Dicta, nesciunt! Pariatur eos quo est laboriosam nulla atque doloribus quae aperiam odit inventore tempore ad animi voluptas maiores voluptatibus, accusantium fuga quas sint eaque unde facere, culpa reiciendis quia quod. Earum, soluta modi nisi maiores a enim ratione officiis vero, sequi ad non harum veritatis excepturi odit placeat totam, nulla eius aperiam voluptatibus? Facere temporibus, quas quis repellendus asperiores accusamus magnam tempore quos minima doloribus obcaecati, autem illo a odit deserunt totam amet saepe provident, ad fugit voluptate animi expedita. Quam dignissimos ex pariatur natus optio ipsa ab. Ratione illum ex eaque culpa ut unde soluta sapiente repellendus, officiis sit molestiae doloribus adipisci, fuga voluptatem optio sed dolorem dignissimos dolore ipsum assumenda amet ipsam dolores! Molestias debitis eligendi officiis dolorum odit nostrum rem ab illo optio dicta alias autem, corporis placeat, consequatur exercitationem maxime modi voluptates dolores eum doloremque earum! Soluta maxime nihil ea! Iusto est numquam veritatis placeat quia commodi quis porro at aliquam totam reiciendis illo perspiciatis suscipit laboriosam ipsa ut architecto, explicabo odit? Iste, amet commodi numquam natus soluta blanditiis voluptatum ut, autem hic fugit, perferendis repudiandae consequuntur? Nesciunt deleniti architecto dicta dolor eligendi ducimus quia voluptatibus libero aspernatur dolorum! Laudantium provident facere et tempore pariatur, accusamus est tempora cum delectus error corporis officia. Quae saepe nisi voluptatibus, quis delectus tenetur ad voluptatum in error doloremque velit ea eum magnam, numquam illum deserunt repellendus iure nostrum praesentium eligendi repudiandae? Quibusdam, eligendi! Atque, odit natus, modi dolor architecto adipisci doloremque quas sed dolorem aliquam sit laborum dignissimos officia repellat magni ut cupiditate ipsum cumque exercitationem rerum facilis explicabo debitis asperiores? Nesciunt, dolorum quae? Dicta amet rerum pariatur! Omnis eligendi quis nostrum odio quaerat illum vitae sed eaque porro esse ipsa iure quisquam blanditiis, optio cumque consequatur exercitationem similique minima minus vero nobis aspernatur corporis incidunt! Ullam aut dicta modi unde, ut quam cumque ratione cum eos exercitationem laboriosam quibusdam fugiat nam vero esse hic ab assumenda accusamus facilis ipsa, laborum sit. Hic impedit tenetur iste numquam quod aliquid repellendus, fugiat maxime rerum illum ex, tempore dicta necessitatibus quibusdam corporis quisquam ducimus facilis id blanditiis nam iusto! Illo consequatur corrupti, ipsam facilis nulla magnam minus earum excepturi consequuntur, ratione beatae repudiandae esse impedit neque dignissimos vero harum. Modi autem, quibusdam rem dolorem, veritatis doloremque quos, debitis nostrum omnis excepturi amet maiores ut ducimus similique aliquam eveniet porro. Nostrum temporibus nobis atque ex! Dicta accusantium beatae in ipsa rerum vitae animi! Tempora minus voluptas sint repellat cumque nesciunt eum assumenda fuga asperiores, temporibus neque! Beatae neque non, sint corporis esse fugit! Fugit illo perspiciatis eligendi deserunt, harum beatae earum ad suscipit labore voluptas corporis, facere rerum, quis facilis. Id odit quidem quasi illum reiciendis repellat ex nobis magnam commodi dicta voluptas soluta, sunt voluptatum eum itaque corporis. Consectetur itaque magnam vero illum modi dicta eveniet quod atque necessitatibus provident velit, dolore incidunt nostrum maxime deleniti quasi quae nemo tempore enim reiciendis eligendi voluptate quos. Soluta enim mollitia dolorem nesciunt vel quae ut, perspiciatis distinctio. Enim omnis assumenda excepturi nisi ratione, quis recusandae, eius aliquid commodi delectus quia. Officiis nostrum optio quia possimus similique quaerat odit quas cupiditate sit minus animi fugiat consectetur est facere ducimus dignissimos, suscipit earum at. Nesciunt numquam tempora ullam molestiae aspernatur repudiandae architecto alias quis? Animi perspiciatis recusandae vel aperiam explicabo ipsam ipsum minus praesentium voluptate! Molestiae, esse quia. Consequatur in, omnis cum obcaecati minus, at, vero cumque laborum facere sed eveniet. Corrupti repellat, tempora adipisci officia delectus quis accusamus dolore enim ipsum, unde animi sunt dolorum ea aliquam optio! Laborum illo aut voluptates commodi consequuntur cupiditate reprehenderit explicabo laudantium voluptatum asperiores magnam soluta iusto delectus incidunt voluptas, quibusdam, minima a non minus nihil molestias. Nemo provident ullam dolorem sapiente obcaecati iste!</p>
+        </div>
+
+        <div id="store-item-container"  x-data="storeAndCart">
+            <template x-for="(item, id) in store_items" 
+                x-init="store_items = await(await fetch('/api/store_items')).json()">
+
+                <div class="store-item">
+                    <img :src="item.imageUrl" alt="">
+                    <div class="text">
+                        <h2 x-text="item.name"></h2>
+                        <h4 x-text="'price: ' + item.price"></h4>
+                        <p x-text="'quantity: ' + item.quantity"></p>
+                        <button @click="addToCart(id); showCart = true">Add to cart</button>
+                        <button @click="singleItem = item">View</button>
+                    </div>
+                </div>
+            </template>
+        </div>
+
+        <div class="right">
+            <h2>Welcome to Our Space</h2>
+            <p>
+                In a world full of choices, we invite you to explore something different. Here, creativity meets functionality, and every step is a new discovery. Whether you're looking for inspiration, a new adventure, or just a moment of peace, you're in the right place.
+            </p>
+            <p>
+                Our passion is to bring you stories and experiences that resonate. With every click, we unlock possibilities—ideas that move, change, and grow. We don't just tell stories; we live them, breathe them, and share them with you.
+            </p>
+            <p>
+                So take a look around, dive into the content, and let your journey begin. We're here to spark curiosity, fuel your imagination, and help you see the world a little differently. Ready to get started?
+            </p>
+        </div>
+
+        </div>
+
+        
+    </div>
+
+
+
+    <div id="cart" x-show="showCart"  x-data="storeAndCart">
+        <h1 x-text="'total price: ' + shared.total_price"></h1>
+
+        <template x-for="(quantity, id) in cart">
+            <div class="cart-item">
+                <div class="top">
+                    <img :src="store_items[id].imageUrl" alt="">
+                    <h2 x-text="store_items[id].name"></h2>
+                </div>
+                <div class="text">
+                    <h4 x-text="'price: ' + store_items[id].price"></h4>
+                    <p x-text="'quantity: ' + quantity"></p>
+                    <button @click="cart[id] = cart[id] - 1">-</button>
+                    <button @click="cart[id] = cart[id] + 1">+</button>
+                    <button @click="deleteFromCart(id)">Delete from cart</button>
+                </div>
+            </div>
+        </template>
+    </div>
+    
+</body>
+
+<script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
+
+
+
+</html>
